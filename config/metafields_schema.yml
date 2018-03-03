@@ -1,0 +1,12 @@
+info:
+  label: Informations
+  fields:
+    serve:
+      hint: "Api eg: http://my.engine.com/locomotive/api/v3/sites.json"
+      type: string
+    email:
+      hint: "Administrator email"
+      type: string
+    token:
+      hint: "Your engine's token. Get it like so:<br><pre>curl -v  -d 'email=your@email.abc&password=foo' 'https://station.locomotive.works/locomotive/api/v3/tokens.json'</pre>"
+      type: string

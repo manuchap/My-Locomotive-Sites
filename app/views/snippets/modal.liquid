@@ -1,0 +1,9 @@
+<div id="{{forloop.index}}" class="w3-modal">
+  <div class="w3-modal-content w3-animate-top"">
+    <div class="w3-container">
+      <span onclick="document.getElementById({{forloop.index}}).style.display='none'"
+      class="w3-button w3-display-topright">&times;</span>
+      <div class="w3-small"><article style="word-wrap: break-word">{{ info.data.[index] | remove: '"' | remove_first: '{' | split: ', ' | join: '<br>' | split: '=>' | join: ': ' }}</article></div>
+    </div>
+  </div>
+</div>
