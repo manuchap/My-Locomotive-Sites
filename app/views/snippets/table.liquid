@@ -8,7 +8,7 @@
     <tr>
       <td>{{ i.name }}</td>
       <td>{{ i.updated_at | localized_date: '%d %B %Y', 'en' }}</td>
-      <td><a href="#" onclick="document.getElementById({{forloop.index}}).style.display='block'">Details</a> • <a href="https://{{ i.domains.first }}" target="_blank">Visit</a> • <a href="https://{{ i.domains.first }}/locomotive" target="_blank">Edit</a></td>
+      <td><a href="#" onclick="document.getElementById({{forloop.index}}).style.display='block'">Details</a>&nbsp;<a href="https://{{ i.domains.first }}" target="_blank">Visit</a>&nbsp;<a href="https://{{ i.domains.first }}/locomotive" target="_blank">Edit</a></td>
       {% include 'modal' with index: forloop.index %}
     </tr>
     {% endfor %}
