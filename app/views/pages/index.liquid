@@ -6,7 +6,7 @@ listed: true
 published: true
 is_layout: false
 ---
-{% unless info.data %}{% comment %}Fetch data once per session{% endcomment %}
+{% unless info.data %}
 {% capture serve %}{{site.metafields.info.serve}}{% endcapture %}
 {% capture email %}{{site.metafields.info.email}}{% endcapture %}
 {% capture token %}{{site.metafields.info.token}}{% endcapture %}
