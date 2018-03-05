@@ -8,7 +8,7 @@ meta_description: ''
 robots_txt: "User-agent: *\r\nDisallow: /"
 metafields:
   info:
-    serve: http://my.engine.com/locomotive/api/v3/sites.json
+    serve: "http://my.engine.com/locomotive/api/v3/sites.json"
     email: "admin@site.com"
     token: "1234567890"
 metafields_ui:

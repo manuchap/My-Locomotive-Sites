@@ -6,7 +6,7 @@ listed: true
 published: true
 is_layout: false
 ---
-{% unless info.data %}
+{% unless info.data %}{% comment %}Fetch data once per session{% endcomment %}
 {% capture serve %}{{site.metafields.info.serve}}{% endcapture %}
 {% capture email %}{{site.metafields.info.email}}{% endcapture %}
 {% capture token %}{{site.metafields.info.token}}{% endcapture %}
@@ -28,6 +28,6 @@ setProp('info', info);
 {% endunless %}
 {% extends 'layouts/default' %}
 {% block 'main' %}
-<div class="w3-center w3-jumbo font-effect-3d" style="font-family: Rancho">{{ site.name }}<br><span class="w3-hide-small">🚂🚃🚃🚃</span></div>
+{% include 'title' %}
 {% include 'table' %}
 {% endblock %}
