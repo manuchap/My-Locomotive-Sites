@@ -1,7 +1,7 @@
   <table id="myTable" class="w3-table-all w3-card-4">
     <tr>
-      <th><a href="#" onclick="sortTableName()">Site</a></th>
-      <th><a href="#" onclick="sortTableDate()">Updated</a></th>
+      <th><a href="#" onclick="sortTable(0)">Site</a></th>
+      <th><a href="#" onclick="sortTable(1)">Updated</a></th>
       <th>Action</th>
     </tr>
     {% for i in info.data %}
@@ -14,8 +14,8 @@
     {% endfor %}
   </table>
   <script type="text/javascript">
-    function sortTableName() {
-      var col, table, rows, switching, i, x, y, shouldSwitch;
+    function sortTable(index) {
+      var table, rows, switching, i, x, y, shouldSwitch;
       table = document.getElementById("myTable");
       switching = true;
       while (switching) {
@@ -23,31 +23,9 @@
         rows = table.getElementsByTagName("TR");
         for (i = 1; i < (rows.length - 1); i++) {
           shouldSwitch = false;
-          x = rows[i].getElementsByTagName("TD")[0];
-          y = rows[i + 1].getElementsByTagName("TD")[0];
+          x = rows[i].getElementsByTagName("TD")[index];
+          y = rows[i + 1].getElementsByTagName("TD")[index];
           if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-            shouldSwitch= true;
-            break;
-          }
-        }
-        if (shouldSwitch) {
-          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-          switching = true;
-        }
-      }
-    }
-    function sortTableDate() {
-      var col, table, rows, switching, i, x, y, shouldSwitch;
-      table = document.getElementById("myTable");
-      switching = true;
-      while (switching) {
-        switching = false;
-        rows = table.getElementsByTagName("TR");
-        for (i = 1; i < (rows.length - 1); i++) {
-          shouldSwitch = false;
-          x = rows[i].getElementsByTagName("TD")[1];
-          y = rows[i + 1].getElementsByTagName("TD")[1];
-          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
             shouldSwitch= true;
             break;
           }
