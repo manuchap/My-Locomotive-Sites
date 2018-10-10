@@ -6,26 +6,18 @@ listed: true
 published: true
 is_layout: false
 ---
-{% unless info.data %}
-{% capture serve %}{{site.metafields.info.serve}}{% endcapture %}
-{% capture email %}{{site.metafields.info.email}}{% endcapture %}
-{% capture token %}{{site.metafields.info.token}}{% endcapture %}
 {% action "Site Infos" %}
-var serve = getProp("serve");
-var token = getProp("token");
-var email = getProp("email");
 var info = false;
-info = callAPI('GET', serve, {
+info = callAPI('GET', site.metafields.info.serve, {
   data: {
   },
   headers: {
-    'X-Locomotive-Account-Email': email,
-    'X-Locomotive-Account-Token': token
+    'X-Locomotive-Account-Email': site.metafields.info.email,
+    'X-Locomotive-Account-Token': site.metafields.info.token
   }
 });
 setProp('info', info);
 {% endaction %}
-{% endunless %}
 {% extends 'layouts/default' %}
 {% block 'main' %}
 {% include 'title' %}
