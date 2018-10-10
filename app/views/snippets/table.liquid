@@ -8,7 +8,7 @@
     <tr>
       <td>{{ i.name }}</td>
       <td>{{ i.updated_at | split: 'T' | join: ' at ' | truncate: '22' | remove: '...' }}</td>
-      <td><a href="#" onclick="document.getElementById({{forloop.index}}).style.display='block'"><i class="fa fa-lg fa-info"></i></a>&nbsp;<a href="https://{{ i.domains.first }}/locomotive" target="_blank"><i class="fa fa-lg fa-gear"></i></a>&nbsp;<a href="https://{{ i.domains.first }}" target="_blank"><i class="fa fa-lg fa-home"></i></a></td>
+      <td><a href="#" onclick="document.getElementById({{forloop.index}}).style.display='block'">info</a>&nbsp;<a href="https://{{ i.domains.first }}/locomotive" target="_blank">admin</a>&nbsp;<a href="https://{{ i.domains.first }}" target="_blank">site</a></td>
       {% include 'modal' with index: forloop.index0 %}
     </tr>
     {% endfor %}
